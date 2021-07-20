@@ -101,7 +101,7 @@ router.delete('/:id', async (req, res) => {
     return res.status(200).json({ ...removed });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: '제목을 입력해주세요.', error });
+    res.status(500).json({ message: '알수없는 오류입니다.', error });
   }
 });
 
