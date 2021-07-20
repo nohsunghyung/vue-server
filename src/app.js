@@ -22,14 +22,14 @@ mongoose.connect(
   'mongodb+srv://test:1234@cluster0-gnwq8.mongodb.net/test?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
-  },
+  }
 );
 mongoose.Promise = global.Promise;
 
 // server setup
 let port;
 async function configServer() {
-  port = 3000 || (await detectPort(3000));
+  port = 3003 || (await detectPort(3003));
 }
 configServer();
 
@@ -52,6 +52,6 @@ app.listen(port, () =>
   console.log(
     `${chalk.white
       .bgHex('#41b883')
-      .bold(`VUE TIL SERVER IS RUNNING ON ${port}`)}`,
-  ),
+      .bold(`VUE TIL SERVER IS RUNNING ON ${port}`)}`
+  )
 );

@@ -16,9 +16,11 @@ router.post('/', async (req, res) => {
   } catch (error) {
     console.log(error);
     if (error.code === 11000) {
-      return res.status(400).send({ message: 'Duplicated Data', error });
+      return res
+        .status(400)
+        .send({ message: '동일한 제목의 글이 존재합니다.', error });
     }
-    res.status(400).send({ message: 'sth wrong', error });
+    res.status(400).send({ message: '제목을 입력해주세요.', error });
   }
 });
 
@@ -35,7 +37,7 @@ router.get('/', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(400).json({ message: 'sth wrong', error });
+    res.status(400).json({ message: '제목을 입력해주세요.', error });
   }
 });
 
@@ -55,7 +57,7 @@ router.get('/:id', async (req, res) => {
     res.status(200).json({ ...doc });
   } catch (error) {
     console.error(error);
-    res.status(400).json({ message: 'sth wrong', error });
+    res.status(400).json({ message: '제목을 입력해주세요.', error });
   }
 });
 
@@ -67,7 +69,7 @@ router.put('/:id', async (req, res) => {
         _id: req.params.id,
       },
       req.body,
-      { new: true },
+      { new: true }
     )
       .lean()
       .exec();
@@ -79,7 +81,7 @@ router.put('/:id', async (req, res) => {
     res.status(200).json({ ...updatedDoc });
   } catch (error) {
     console.error(error);
-    res.status(400).json({ message: 'sth wrong', error });
+    res.status(400).json({ message: '제목을 입력해주세요.', error });
   }
 });
 
@@ -99,7 +101,7 @@ router.delete('/:id', async (req, res) => {
     return res.status(200).json({ ...removed });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'sth wrong', error });
+    res.status(500).json({ message: '제목을 입력해주세요.', error });
   }
 });
 
