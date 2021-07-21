@@ -18,7 +18,7 @@ npm run dev
 
 ## 서버 실행 확인
 
-명령어 실행 창에서 아래와 같은 메세지가 떴는지 확인합니다. #(**node v10버전으로 변경후 사용)
+명령어 실행 창에서 아래와 같은 메세지가 떴는지 확인합니다.(node v10버전으로 변경후 사용)
 > VUE TIL SERVER IS RUNNING ON 3003
 <!-- <img src="./images/success-log.png" style="max-width:100%;"> -->
 
